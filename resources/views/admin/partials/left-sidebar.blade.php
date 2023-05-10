@@ -7,7 +7,7 @@
           h-8">
       </span>
     </a>
-    
+
     <div class="icon-body max-h-full w-full overflow-hidden">
       <div class="relative h-full">
         <ul class="flex-col w-[60px] items-center mt-[60px] flex-1 border-b-0 tab-menu"
@@ -88,17 +88,22 @@
         <div id="Icon-menu">
           <div class="hidden" id="Dashboards" role="tabpanel" aria-labelledby="Dashboards-tab">
             <div class="title-box mb-3">
-              <h6 class="text-sm font-medium uppercase text-slate-400">Dashboards</h6>
+              <h6 class="text-sm font-medium uppercase text-slate-400">الأساسيات</h6>
             </div>
             <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
               <li class="nav-item relative block">
-                <a href="index.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
-                  Analytics
+                <a href="{{ route('admin.dashboard') }}" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
+                  الرئيسية
                 </a>
               </li>
               <li class="nav-item relative block">
-                <a href="crypto-index.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
-                  Crypto
+                <a href="{{ route('admin.categories.index') }}" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
+                  التصنيفات
+                </a>
+              </li>
+              <li class="nav-item relative block">
+                <a href="{{ route('admin.users.index') }}" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
+                  المستخدمين
                 </a>
               </li>
               <li class="nav-item relative block">
@@ -130,7 +135,7 @@
             <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
               <li>
                 <div id="accordion-flush" data-accordion="collapse" data-active-classes="" data-inactive-classes="text-gray-700 hover:text-primary-500 dark:text-gray-400">
-                  
+
                   <div id="Apps-Analytics">
                     <a href="#" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4 cursor-pointer  " data-accordion-target="#Analytics-flush" aria-expanded="false" aria-controls="Analytics-flush">
                       <span>Analytics</span>
@@ -139,7 +144,7 @@
                   </div>
                   <div id="Analytics-flush" class="collapse-menu hidden" aria-labelledby="Apps-Analytics">
                     <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
-                      
+
                       <li class="nav-item relative block">
                         <a href="analytics-customers.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Customers
@@ -160,7 +165,7 @@
                     </a>
                   </div>
                   <div id="Crypto-flush" class="collapse-menu hidden" aria-labelledby="Apps-Crypto">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="crypto-exchange.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Exchange
@@ -196,7 +201,7 @@
                     </a>
                   </div>
                   <div id="CRM-flush" class="collapse-menu hidden" aria-labelledby="Apps-CRM">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="crm-contacts.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Contacts
@@ -227,7 +232,7 @@
                     </a>
                   </div>
                   <div id="Projects-flush" class="collapse-menu hidden" aria-labelledby="Apps-Projects">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="projects-clients.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Clients
@@ -278,7 +283,7 @@
                     </a>
                   </div>
                   <div id="Ecommerce-flush" class="collapse-menu hidden" aria-labelledby="Apps-Ecommerce">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="ecommerce-products.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Products
@@ -303,7 +308,7 @@
                         <a href="ecommerce-checkout.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Chackout
                         </a>
-                      </li>                     
+                      </li>
                     </ul>
                   </div>
 
@@ -314,7 +319,7 @@
                     </a>
                   </div>
                   <div id="Helpdesk-flush" class="collapse-menu hidden" aria-labelledby="Apps-Helpdesk">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="helpdesk-tickets.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Tickets
@@ -329,10 +334,10 @@
                         <a href="helpdesk-agents.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Agents
                         </a>
-                      </li>                                       
+                      </li>
                     </ul>
                   </div>
-                  
+
 
                   <div id="Apps-Email">
                     <a href="#" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4 cursor-pointer  " data-accordion-target="#Email-flush" aria-expanded="false" aria-controls="Email-flush">
@@ -341,7 +346,7 @@
                     </a>
                   </div>
                   <div id="Email-flush" class="collapse-menu hidden" aria-labelledby="Apps-Email">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="apps-email-inbox.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Inbox
@@ -351,11 +356,11 @@
                         <a href="apps-email-read.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Read Email
                         </a>
-                      </li>                                    
+                      </li>
                     </ul>
                   </div>
                 </div>
-              </li> 
+              </li>
 
               <li class="nav-item relative block">
                 <a href="apps-chat.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
@@ -386,7 +391,7 @@
             <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
               <li class="nav-item relative block">
                 <div id="UI-flush" data-accordion="collapse" data-active-classes="" data-inactive-classes="text-gray-700 hover:text-primary-500 dark:text-gray-400">
-                  
+
                   <div id="UIKit-Elements">
                     <a href="#" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4 cursor-pointer  " data-accordion-target="#UI-Elements" aria-expanded="false" aria-controls="UI-Elements">
                       <span>UI Elements</span>
@@ -394,7 +399,7 @@
                     </a>
                   </div>
                   <div id="UI-Elements" class="collapse-menu hidden" aria-labelledby="UIKit-Elements">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="ui-alerts.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Alerts
@@ -505,7 +510,7 @@
                     </a>
                   </div>
                   <div id="AdvancedUI-flush" class="collapse-menu hidden" aria-labelledby="UIKit-Advanced">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="advanced-animation.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Animation
@@ -561,7 +566,7 @@
                     </a>
                   </div>
                   <div id="Forms-flush" class="collapse-menu hidden" aria-labelledby="UIKit-Forms">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="forms-elements.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Basic Elements
@@ -607,7 +612,7 @@
                     </a>
                   </div>
                   <div id="Charts-flush" class="collapse-menu hidden" aria-labelledby="UIKit-Charts">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="charts-apex.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Apex
@@ -632,7 +637,7 @@
                         <a href="charts-toast-ui.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Toast
                         </a>
-                      </li>                      
+                      </li>
                     </ul>
                   </div>
 
@@ -643,7 +648,7 @@
                     </a>
                   </div>
                   <div id="Tables-flush" class="collapse-menu hidden" aria-labelledby="UIKit-Tables">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="tables-basic.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Basic
@@ -658,7 +663,7 @@
                         <a href="tables-editable.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Editable
                         </a>
-                      </li>                                       
+                      </li>
                     </ul>
                   </div>
 
@@ -669,7 +674,7 @@
                     </a>
                   </div>
                   <div id="Icons-flush" class="collapse-menu hidden" aria-labelledby="UIKit-Icons">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="icons-materialdesign.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Material Design
@@ -689,7 +694,7 @@
                         <a href="icons-feather.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Feather
                         </a>
-                      </li>                                       
+                      </li>
                     </ul>
                   </div>
                   <div id="UIKit-Maps">
@@ -699,7 +704,7 @@
                     </a>
                   </div>
                   <div id="Maps-flush" class="collapse-menu hidden" aria-labelledby="UIKit-Maps">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="maps-google.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Google Maps
@@ -709,12 +714,12 @@
                         <a href="maps-leaflet.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Leaflet Maps
                         </a>
-                      </li> 
+                      </li>
                       <li class="nav-item relative block">
                         <a href="maps-vector.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Vector Maps
                         </a>
-                      </li>                   
+                      </li>
                     </ul>
                   </div>
 
@@ -725,7 +730,7 @@
                     </a>
                   </div>
                   <div id="Email-Templates-flush" class="collapse-menu hidden" aria-labelledby="UIKit-Email-Templates">
-                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">                      
+                    <ul class="nav flex-col flex flex-wrap pl-0 mb-0">
                       <li class="nav-item relative block">
                         <a href="email-templates-basic.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Basic Action Email
@@ -735,16 +740,16 @@
                         <a href="email-templates-alert.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Alert Email
                         </a>
-                      </li> 
+                      </li>
                       <li class="nav-item relative block">
                         <a href="email-templates-billing.html" class="nav-link hover:bg-gray-50 hover:text-primary-500 dark:hover:bg-gray-800/20 rounded-md dark:hover:text-primary-500 relative font-medium text-sm flex items-center h-[38px] decoration-0 px-2 py-4">
                           Billing Email
                         </a>
-                      </li>                                    
+                      </li>
                     </ul>
                   </div>
                 </div>
-              </li>              
+              </li>
             </ul>
           </div>
           <div class="hidden" id="Pages" role="tabpanel" aria-labelledby="Pages-tab">

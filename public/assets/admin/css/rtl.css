@@ -6,3 +6,8 @@
     margin-left: auto !important;
     margin-right: 0 !important;
 }
+
+.dataTable-sorter::before, .dataTable-sorter::after {
+    right: unset !important;
+    left: 4px !important;
+}
