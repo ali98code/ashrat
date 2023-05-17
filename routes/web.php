@@ -17,10 +17,6 @@ Auth::routes();
 
 /* =============== Front Routes =============== */
 Route::get('/', [HomeController::class, 'index'])->name('home');
-// All Services
-Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
-
-
 
 
 /* =============== Auth Routes =============== */
@@ -45,18 +41,22 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/work', [SettingController::class, 'work_update'])->name('work_update');
         // Phone Settings
         Route::get('/phone', [SettingController::class, 'phone'])->name('phone');
+        Route::post('/phone', [SettingController::class, 'phone_update'])->name('phone_update');
         // Change Password
-        Route::get('/change-password', [SettingController::class, 'change_password'])->name('password');
+        Route::get('/change-password', [SettingController::class, 'password'])->name('password');
+        Route::post('/change-password', [SettingController::class, 'change_password'])->name('change_password');
     });
 
 });
+
+// All Services
+Route::get('/services/{slug?}/{sub?}', [ServiceController::class, 'index'])->name('services.index');
+
 
 /* =============== Ajax Routes =============== */
 Route::group(['prefix' => 'ajax', 'as' => 'ajax.'], function() {
     Route::get('get-sub-categories/{id}', [HomeController::class, 'get_sub_categories']);
 });
-
-
 
 /* =============== All Admin Routes =============== */
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {

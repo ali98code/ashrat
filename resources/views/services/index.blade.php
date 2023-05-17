@@ -8,7 +8,7 @@
         <div class="container">
             <div class="boxes">
                 @foreach($categories as $category)
-                    <a href="" class="box">
+                    <a href="{{ route('services.index', $category->slug) }}" class="box">
                         <i class="{{ $category->icon }}" aria-hidden="true"></i>
                         <span class="title">{{ $category->name }}</span>
                     </a>
@@ -79,7 +79,7 @@
                 <div class="services-box">
                     <a href="service.html" class="service-box">
                         <div class="image">
-                            <img src="images/service.png" alt="" />
+                            <img src="{{ asset('assets/images/service.png') }}" alt="" />
                         </div>
                         <div class="text">
                             <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
@@ -90,7 +90,7 @@
                         </div> </a
                     ><a href="service.html" class="service-box">
                         <div class="image">
-                            <img src="images/service2.png" alt="" />
+                            <img src="{{ asset('assets/images/service.png') }}" alt="" />
                         </div>
                         <div class="text">
                             <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>

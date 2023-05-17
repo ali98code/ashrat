@@ -11,11 +11,11 @@
     ><i class="fas fa-money-check-alt"></i>
         بيانات السحب
     </a>
-    <a href="#" class="link-tab"
+    <a href="{{ route('settings.password') }}" class="link-tab {{ $active == 'change_password' ? 'active' : '' }}"
     ><i class="fas fa-key"></i>
         تغيير كلمة السر
     </a>
-    <a href="#" class="link-tab"
+    <a href="{{ route('settings.phone') }}" class="link-tab {{ $active == 'phone' ? 'active' : '' }}"
     ><i class="fas fa-phone"></i>
         الهاتف المحمول
     </a>

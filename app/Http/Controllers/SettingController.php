@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SettingPasswordRequest;
+use App\Http\Requests\SettingPhoneRequest;
 use App\Http\Requests\SettingRequest;
 use App\Http\Requests\SettingWorkRequest;
 use App\Models\Category;
@@ -9,6 +11,8 @@ use App\Models\User;
 use App\Models\UserProfile;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class SettingController extends Controller
 {
@@ -60,5 +64,41 @@ class SettingController extends Controller
         UserProfile::where('user_id', auth()->id())->update($data);
 
         return redirect()->back();
+    }
+
+    public function phone()
+    {
+        $user= auth()->user();
+        return view('settings.phone', compact('user'));
+    }
+
+    public function phone_update(SettingPhoneRequest $request)
+    {
+        $data = $request->validated();
+        Auth::user()->update($data);
+        return redirect()->back();
+    }
+
+    public function password()
+    {
+        $user = auth()->user();
+        return view('settings.change_password', compact('user'));
+    }
+
+    public function change_password(SettingPasswordRequest $request)
+    {
+        $data = $request->validated();
+
+        $old_password = $request->old_password;
+
+        if(Hash::check($old_password, auth()->user()->password)) {
+            Auth::user()->update([
+                'password' => Hash::make($request->password)
+            ]);
+            return redirect()->back();
+        } else {
+            return redirect()->back()->withErrors(['كلمة المرور القديمة غير صحيحة']);
+        }
+
     }
 }

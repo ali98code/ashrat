@@ -13,10 +13,25 @@ class ServiceController extends Controller
 {
     use ImageTrait;
 
-    public function index()
+    public function index($slug = null, $sub = null)
     {
+        if($slug) {
+            $category = Category::whereSlug($slug)->first();
+            if(!$category)
+                return abort(404);
+
+            if($sub) {
+                $category = Category::whereSlug($sub)->first();
+                $services = Service::where('category_id', $category->id)->get();
+            } else {
+                $services = Service::whereRelation('category', 'parent_id', $category->id)->get();
+            }
+
+            return view('services.services_of_category', compact('category', 'services'));
+        }
+
         $services = Service::latest()->get();
-        $categories = Category::get();
+        $categories = Category::whereNull('parent_id')->get();
         return view('services.index', compact('services', 'categories'));
     }
 
