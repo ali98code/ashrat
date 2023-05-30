@@ -97,7 +97,8 @@
                                             class="file-upload-input"
                                             type="file"
                                             id="images"
-                                            name="images"
+                                            name="images[]"
+                                            multiple
                                             onchange="readImage(this);"
                                         />
                                         <img id="images-holder" src="#" alt="" />

@@ -165,15 +165,15 @@
                 </div>
                 <div class="services-box">
                     @foreach($services as $service)
-                        <a href="#" class="service-box">
+                        <a href="{{ route('service.show', $service->slug) }}" class="service-box">
                             <div class="image">
-                                <img src="{{ asset('assets/images/service.png') }}" alt="" />
+                                <img src="{{ asset($service->firstMedia->file_name) }}" alt="" />
                             </div>
                             <div class="text">
                                 <p class="title">{{ $service->title }}</p>
                                 <div class="price">
                                     <span>سعر الخدمة</span>
-                                    <span>10ريال</span>
+                                    <span>{{ $service->getPrice() }}</span>
                                 </div>
                             </div>
                         </a>

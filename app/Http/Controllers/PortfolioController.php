@@ -18,13 +18,24 @@ class PortfolioController extends Controller
 
     public function store(PortfolioRequest $request)
     {
-        $data = $request->validated();
+        $data = \Illuminate\Support\Arr::except($request->validated(), 'files');
 
         $data['user_id'] = auth()->id();
-        $data['image'] = $this->upload_image($request, 'image', 'uploads/portfolios');
         $data['skills'] = implode(",", $request->skills);
 
-        Portfolio::create($data);
+        // Upload Image
+        $data['image'] = $this->upload_image($request, 'image', 'uploads/portfolios');
+        // Upload Files
+        $files = $this->upload_files($request, 'files', 'uploads/portfolios');
+
+        // Create Portfolio
+        $portfolio = Portfolio::create($data);
+
+        // Store Files
+        foreach ($files as $file)
+        {
+            $portfolio->media()->create($file);
+        }
 
         return redirect()->route('home');
     }

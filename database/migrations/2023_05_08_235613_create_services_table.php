@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('title');
+            $table->string('slug')->unique();
             $table->unsignedBigInteger('category_id');
             $table->text('description');
             $table->text('video_link')->nullable();

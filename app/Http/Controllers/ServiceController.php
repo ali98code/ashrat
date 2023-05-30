@@ -31,7 +31,7 @@ class ServiceController extends Controller
         }
 
         $services = Service::latest()->get();
-        $categories = Category::whereNull('parent_id')->get();
+        $categories = Category::with('services')->whereNull('parent_id')->get();
         return view('services.index', compact('services', 'categories'));
     }
 
@@ -50,15 +50,27 @@ class ServiceController extends Controller
         $data['skills'] = implode(",", $request->skills);
 
         // Upload Image
-        $image = $this->upload_image($request, 'images', 'uploads/services');
+        $files = $this->upload_files($request, 'images', 'uploads/services');
 
+        // Create Service
         $service = Service::create($data);
 
-        ServiceImage::create([
-            'service_id' => $service->id,
-            'image' => $image
-        ]);
+        // Store Files
+        foreach ($files as $file)
+        {
+            $service->media()->create($file);
+        }
 
         return redirect()->route('home');
+    }
+
+    public function show($slug)
+    {
+        $service = Service::whereSlug($slug)->first();
+
+        if(!$service)
+            return abort(404);
+
+        return view('services.show', compact('service'));
     }
 }

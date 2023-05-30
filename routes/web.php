@@ -50,7 +50,8 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 // All Services
-Route::get('/services/{slug?}/{sub?}', [ServiceController::class, 'index'])->name('services.index');
+Route::get('services/{slug?}/{sub?}', [ServiceController::class, 'index'])->name('services.index');
+Route::get('service/{slug}', [ServiceController::class, 'show'])->name('service.show');
 
 
 /* =============== Ajax Routes =============== */

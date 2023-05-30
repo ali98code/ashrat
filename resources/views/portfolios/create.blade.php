@@ -3,7 +3,7 @@
 @section('title', 'إضافة عمل جديد')
 
 @section('style')
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
     <style>
         .select2 {
             width: 100% !important;
@@ -17,6 +17,7 @@
             -o-border-radius: 4px;
             font-size: 0.8rem;
         }
+
         .select2-selection {
             border: 0 !important;
         }
@@ -82,7 +83,24 @@
                                             name="image"
                                             onchange="readImage(this);"
                                         />
-                                        <img id="image-holder" src="#" alt="" />
+                                        <img id="image-holder" src="#" alt=""/>
+                                    </div>
+                                </div>
+
+                                <div class="row-inputs row-inputs-images">
+                                    <div class="input file-upload-div">
+                                        <label for="files">المرفقات</label>
+                                        <label class="file-upload-label" for="files">
+                                            <i class="fa-solid fa-file"></i>
+                                            ارفع مرفقات
+                                        </label>
+                                        <input
+                                            class="file-upload-input"
+                                            type="file"
+                                            id="files"
+                                            name="files[]"
+                                            multiple
+                                        />
                                     </div>
                                 </div>
                                 <div class="input required skills-sec d-none">
@@ -187,7 +205,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.skills-sec').removeClass('d-none');
             $('.skills_select2').select2();
         })

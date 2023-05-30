@@ -18,165 +18,33 @@
                     <span class="title"> خدمات أخري </span>
                 </a>
             </div>
+            @foreach($categories as $category)
             <section class="design">
                 <div class="header">
-                    <p>خدمات تصميم</p>
-                    <a class="secondary-butt" href="#">عرض المزيد</a>
+                    <p>
+                        خدمات
+                        <span>{{ $category->name }}</span>
+                    </p>
+                    <a class="secondary-butt" href="{{ route('services.index', $category->slug) }}">عرض المزيد</a>
                 </div>
                 <div class="services-box">
-                    <a href="service.html" class="service-box">
+                    @foreach($category->tree() as $service)
+                    <a href="{{ route('service.show', $service->slug) }}" class="service-box">
                         <div class="image">
-                            <img src="images/service.png" alt="" />
+                            <img src="{{ asset($service->firstMedia->file_name) }}" alt="" />
                         </div>
                         <div class="text">
-                            <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
+                            <p class="title">{{ $service->title }}</p>
                             <div class="price">
                                 <span>سعر الخدمة</span>
-                                <span>10ريال</span>
-                            </div>
-                        </div> </a
-                    ><a href="service.html" class="service-box">
-                        <div class="image">
-                            <img src="images/service2.png" alt="" />
-                        </div>
-                        <div class="text">
-                            <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
-                            <div class="price">
-                                <span>سعر الخدمة</span>
-                                <span>10ريال</span>
-                            </div>
-                        </div> </a
-                    ><a href="service.html" class="service-box">
-                        <div class="image">
-                            <img src="images/service3.png" alt="" />
-                        </div>
-                        <div class="text">
-                            <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
-                            <div class="price">
-                                <span>سعر الخدمة</span>
-                                <span>10ريال</span>
-                            </div>
-                        </div> </a
-                    ><a href="service.html" class="service-box">
-                        <div class="image">
-                            <img src="images/service4.png" alt="" />
-                        </div>
-                        <div class="text">
-                            <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
-                            <div class="price">
-                                <span>سعر الخدمة</span>
-                                <span>10ريال</span>
+                                <span>{{ $service->getPrice() }}</span>
                             </div>
                         </div>
                     </a>
+                    @endforeach
                 </div>
             </section>
-            <section class="programming">
-                <div class="header">
-                    <p>خدمات برمجة وتطوير</p>
-                    <a class="secondary-butt" href="#">عرض المزيد</a>
-                </div>
-                <div class="services-box">
-                    <a href="service.html" class="service-box">
-                        <div class="image">
-                            <img src="{{ asset('assets/images/service.png') }}" alt="" />
-                        </div>
-                        <div class="text">
-                            <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
-                            <div class="price">
-                                <span>سعر الخدمة</span>
-                                <span>10ريال</span>
-                            </div>
-                        </div> </a
-                    ><a href="service.html" class="service-box">
-                        <div class="image">
-                            <img src="{{ asset('assets/images/service.png') }}" alt="" />
-                        </div>
-                        <div class="text">
-                            <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
-                            <div class="price">
-                                <span>سعر الخدمة</span>
-                                <span>10ريال</span>
-                            </div>
-                        </div> </a
-                    ><a href="service.html" class="service-box">
-                        <div class="image">
-                            <img src="images/service3.png" alt="" />
-                        </div>
-                        <div class="text">
-                            <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
-                            <div class="price">
-                                <span>سعر الخدمة</span>
-                                <span>10ريال</span>
-                            </div>
-                        </div> </a
-                    ><a href="service.html" class="service-box">
-                        <div class="image">
-                            <img src="images/service4.png" alt="" />
-                        </div>
-                        <div class="text">
-                            <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
-                            <div class="price">
-                                <span>سعر الخدمة</span>
-                                <span>10ريال</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </section>
-            <section class="writing">
-                <div class="header">
-                    <p>خدمات كتابة وتحرير</p>
-                    <a class="secondary-butt" href="#">عرض المزيد</a>
-                </div>
-                <div class="services-box">
-                    <a href="service.html" class="service-box">
-                        <div class="image">
-                            <img src="images/service.png" alt="" />
-                        </div>
-                        <div class="text">
-                            <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
-                            <div class="price">
-                                <span>سعر الخدمة</span>
-                                <span>10ريال</span>
-                            </div>
-                        </div> </a
-                    ><a href="service.html" class="service-box">
-                        <div class="image">
-                            <img src="images/service2.png" alt="" />
-                        </div>
-                        <div class="text">
-                            <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
-                            <div class="price">
-                                <span>سعر الخدمة</span>
-                                <span>10ريال</span>
-                            </div>
-                        </div> </a
-                    ><a href="service.html" class="service-box">
-                        <div class="image">
-                            <img src="images/service3.png" alt="" />
-                        </div>
-                        <div class="text">
-                            <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
-                            <div class="price">
-                                <span>سعر الخدمة</span>
-                                <span>10ريال</span>
-                            </div>
-                        </div> </a
-                    ><a href="service.html" class="service-box">
-                        <div class="image">
-                            <img src="images/service4.png" alt="" />
-                        </div>
-                        <div class="text">
-                            <p class="title">تحريك شعار بأحترفية مقابل 10ريال</p>
-                            <div class="price">
-                                <span>سعر الخدمة</span>
-                                <span>10ريال</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </section>
+            @endforeach
         </div>
     </main>
 @endsection

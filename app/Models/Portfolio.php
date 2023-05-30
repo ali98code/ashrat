@@ -15,4 +15,14 @@ class Portfolio extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function firstMedia()
+    {
+        return $this->morphOne(Media::class, 'mediable')->orderBy('file_sort', 'asc');
+    }
+
+    public function media()
+    {
+        return $this->MorphMany(Media::class, 'mediable');
+    }
 }
